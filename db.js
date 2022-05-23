@@ -186,6 +186,7 @@ function deleteUser() {
             if (userid === String(cursor.value.id)) {
                 cursor.delete();
                 loadData();
+                searchUser();
             }
 
             cursor.continue();          
