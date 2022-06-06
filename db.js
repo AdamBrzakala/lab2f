@@ -62,6 +62,26 @@ function saveData() {
     };
 }
 
+function makeid(length) {
+    var result           = '';
+    var characters       = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   }
+   return result;
+}
+
+function makeid2(length) {
+    var result           = '';
+    var characters       = '0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   }
+   return result;
+}
+
 function exampleText() {
     var email = document.getElementById('email');
     var zipcode = document.getElementById('zipcode');
@@ -74,17 +94,18 @@ function exampleText() {
     var ip6 = document.getElementById('ip6');
     var catalog = document.getElementById('catalog');
     var phone = document.getElementById('phone');
-    email.value = "raz@gmail.com";
-    zipcode.value = "91-112";
-    nip.value = "100-10-20-200";
-    dowod.value = "ABC 123456";
+
+    email.value = makeid(5) + "@gmail.com";
+    zipcode.value = makeid2(2) + "-" + makeid2(3);
+    nip.value = makeid2(3) + "-10-20-200";
+    dowod.value = "ABC " + makeid2(6);
     ip4.value = "192.168.1.1";
-    www.value = "www.google.com";
+    www.value = "www." + makeid(6) + ".com";
     diskA.value = 'c:\\windows\\temp';
     diskB.value = "C:\\Windows\\temp";
     catalog.value = "/etc/passwd";
     ip6.value = "2001:0db8:85a3:0000:0000:8a2e:0370:7334";
-    phone.value = "492 492 492";
+    phone.value = makeid2(3) + " 492 492";
 }
 
 function clearText() {
