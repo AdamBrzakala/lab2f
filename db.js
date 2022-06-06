@@ -62,6 +62,7 @@ function saveData() {
     };
 }
 
+
 function makeid(length) {
     var result           = '';
     var characters       = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -99,12 +100,12 @@ function exampleText() {
     zipcode.value = makeid2(2) + "-" + makeid2(3);
     nip.value = makeid2(3) + "-10-20-200";
     dowod.value = "ABC " + makeid2(6);
-    ip4.value = "192.168.1.1";
+    ip4.value = makeid2(3) + "." + makeid2(3) + ".1.1";
     www.value = "www." + makeid(6) + ".com";
-    diskA.value = 'c:\\windows\\temp';
-    diskB.value = "C:\\Windows\\temp";
-    catalog.value = "/etc/passwd";
-    ip6.value = "2001:0db8:85a3:0000:0000:8a2e:0370:7334";
+    diskA.value = 'c:\\windows\\' + makeid(6);
+    diskB.value = "C:\\Windows\\" + makeid(6);
+    catalog.value = "/etc/passwd/" + makeid(4);
+    ip6.value = makeid2(4) + ":0db8:85a3:0000:0000:8a2e:0370:7334";
     phone.value = makeid2(3) + " 492 492";
 }
 
